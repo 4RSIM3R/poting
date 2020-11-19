@@ -1,65 +1,50 @@
 import Head from 'next/head'
+import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+
+  const [first, setFirst] = useState(0)
+  const [second, setSecond] = useState(0)
+  const [third, setThird] = useState(0)
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Aplikasi Voting (Katanya)</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <h1>📢 Pemilihan Osis</h1>
+        <div className={styles.vote_wrapper}>
+          <div className={styles.vote_content}>
+            <h3>{first} ✋</h3>
+            <img className={styles.photo} src="https://www.docker.com/sites/default/files/d8/styles/medium/public/bret-fisher-docker_0.jpg?itok=2GyjkqBn" alt="" />
+            <button onClick={((e) => setFirst(first + 1))}>Vote 🚀</button>
+          </div>
+          <div className={styles.vote_content}>
+            <h3>{second} ✋</h3>
+            <img className={styles.photo} src="https://www.docker.com/sites/default/files/d8/styles/medium/public/bret-fisher-docker_0.jpg?itok=2GyjkqBn" alt="" />
+            <button onClick={((e) => setSecond(second + 1))}>Vote ☝</button>
+          </div>
+          <div className={styles.vote_content}>
+            <h3>{third} ✋</h3>
+            <img className={styles.photo} src="https://www.docker.com/sites/default/files/d8/styles/medium/public/bret-fisher-docker_0.jpg?itok=2GyjkqBn" alt="" />
+            <button onClick={((e) => setThird(third + 1))}>Vote ✊</button>
+          </div>
         </div>
       </main>
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://github.com/4RSIM3R/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Created With 😅 By SUKU
         </a>
-      </footer>
+      </footer> */}
     </div>
   )
 }
